@@ -166,6 +166,9 @@
     <EmbeddedResource Include="CountryMain.resx">
       <DependentUpon>CountryMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GuestSummary.resx">
       <DependentUpon>GuestSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +194,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UpdateInfo.resx">
+      <DependentUpon>UpdateInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

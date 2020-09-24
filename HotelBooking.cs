@@ -115,18 +115,8 @@ namespace TPQR_Session3_24_9
         private void btnBook_Click(object sender, EventArgs e)
         {
             var getTotalCap = int.Parse(lblDelegates.Text) + int.Parse(lblCompetitors.Text);
-            var bookedCap = 0;
-            foreach (DataGridViewRow item in dataGridView1.Rows)
-            {
-                if (dataGridView1[0, item.Index].Value.ToString() == "Double")
-                {
-                    bookedCap += Convert.ToInt32(dataGridView1[3, item.Index].Value) * 2;
-                }
-                else
-                {
-                    bookedCap += Convert.ToInt32(dataGridView1[3, item.Index].Value);
-                }
-            }
+            var bookedCap = originalSingle + (originalDouble * 2);
+            
             if (bookedCap < getTotalCap)
             {
                 MessageBox.Show("Please ensure number of rooms booked are enough for all visitors!");
@@ -157,6 +147,12 @@ namespace TPQR_Session3_24_9
                             userIdFK = _user.userId
                         };
                         context.Hotel_Booking.Add(newBooking);
+                        context.SaveChanges();
+                        var getHotel = (from x in context.Hotels
+                                        where x.hotelId == _hotelID
+                                        select x).FirstOrDefault();
+                        getHotel.numSingleRoomsBooked += originalSingle;
+                        getHotel.numDoubleRoomsBooked += originalDouble;
                         context.SaveChanges();
                         MessageBox.Show("Hotel booking successful!");
                         Close();

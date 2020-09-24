@@ -16,7 +16,7 @@ namespace TPQR_Session3_24_9
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GuestSummary());
+            Application.Run(new LoginForm());
         }
     }
 }

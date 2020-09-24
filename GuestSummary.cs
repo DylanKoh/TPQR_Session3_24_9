@@ -35,7 +35,7 @@ namespace TPQR_Session3_24_9
             chart1.Series.Add("Delegates");
             chart1.Series.Add("Competitors");
             chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             using (var context = new Session3Entities())
             {
                 var attendees = (from x in context.Arrivals
