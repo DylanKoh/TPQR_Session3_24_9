@@ -59,7 +59,7 @@ namespace TPQR_Session3_24_9
             {
                 MessageBox.Show("Ensure there are at least 8 characters for User ID!");
             }
-            else if (Regex.IsMatch(txtUserID.Text, "^[a-zA-Z0-9]+$"))
+            else if (!Regex.IsMatch(txtUserID.Text, "^[a-zA-Z0-9]+$"))
             {
                 MessageBox.Show("Ensure only letters and numeric characters in User ID!");
             }
