@@ -72,11 +72,11 @@ namespace TPQR_Session3_24_9
                     {
                         var get22Arrival = (from x in context.Arrivals
                                             where x.arrivalDate == july22 && x.arrivalTime == timing
-                                            select new { CountryName = x.User.countryName, TotalVeh = x.numberCars + x.number19seat + x.number42seat });
-                        var sb = new StringBuilder(timing);
+                                            select x);
+                        var sb = new StringBuilder(dataGridView1[cell.Index, row.Index].Value.ToString());
                         foreach (var item in get22Arrival)
                         {
-                            sb.Append($"\n\n{item.CountryName}\n({item.TotalVeh} Veh)");
+                            sb.Append($"\n\n{item.User.countryName}\n({item.numberCars + item.number42seat + item.number19seat} Veh)");
                         }
                         dataGridView1[cell.Index, row.Index].Value = sb.ToString();
                     }
@@ -91,13 +91,13 @@ namespace TPQR_Session3_24_9
                     {
                         var get23Arrival = (from x in context.Arrivals
                                             where x.arrivalDate == july23 && x.arrivalTime == timing
-                                            select new { CountryName = x.User.countryName, TotalVeh = x.numberCars + x.number19seat + x.number42seat });
-                        var sb = new StringBuilder(timing);
+                                            select x);
+                        var sb = new StringBuilder(dataGridView2[cell.Index, row.Index].Value.ToString());
                         foreach (var item in get23Arrival)
                         {
-                            sb.Append($"\n\n{item.CountryName}\n({item.TotalVeh} Veh)");
+                            sb.Append($"\n\n{item.User.countryName}\n({item.numberCars + item.number42seat + item.number19seat} Veh)");
                         }
-                        dataGridView1[cell.Index, row.Index].Value = sb.ToString();
+                        dataGridView2[cell.Index, row.Index].Value = sb.ToString();
                     }
                 }
             }
