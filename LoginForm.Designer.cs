@@ -1,6 +1,6 @@
 ﻿namespace TPQR_Session3_24_9
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
